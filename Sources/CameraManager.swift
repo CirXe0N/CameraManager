@@ -112,19 +112,19 @@ open class CameraManager: NSObject, AVCaptureFileOutputRecordingDelegate, UIGest
     // MARK: - Public properties
 
     // Property for custom image album name.
-    open var imageAlbumName: String?
+    @objc open var imageAlbumName: String?
 
     // Property for custom image album name.
-    open var videoAlbumName: String?
+    @objc open var videoAlbumName: String?
 
     /// Property for capture session to customize camera settings.
-    open var captureSession: AVCaptureSession?
+    @objc open var captureSession: AVCaptureSession?
 
     /**
      Property to determine if the manager should show the error for the user. If you want to show the errors yourself set this to false. If you want to add custom error UI set showErrorBlock property.
      - note: Default value is **false**
      */
-    open var showErrorsToUsers = false
+    @objc open var showErrorsToUsers = false
 
     /// Property to determine if the manager should show the camera permission popup immediatly when it's needed or you want to show it manually. Default value is true. Be carful cause using the camera requires permission, if you set this value to false and don't ask manually you won't be able to use the camera.
     @objc open var showAccessPermissionPopupAutomatically = true
@@ -151,13 +151,13 @@ open class CameraManager: NSObject, AVCaptureFileOutputRecordingDelegate, UIGest
      Property to determine if manager should write the resources to the phone library.
      - note: Default value is **true**
      */
-    open var writeFilesToPhoneLibrary = false
+    @objc open var writeFilesToPhoneLibrary = false
 
     /**
      Property to determine if manager should follow device orientation.
      - note: Default value is **true**
      */
-    open var shouldRespondToOrientationChanges = true {
+    @objc open var shouldRespondToOrientationChanges = true {
         didSet {
             if shouldRespondToOrientationChanges {
                 _startFollowingDeviceOrientation()
@@ -171,13 +171,13 @@ open class CameraManager: NSObject, AVCaptureFileOutputRecordingDelegate, UIGest
      Property to determine if manager should horizontally flip image took by front camera.
      - note: Default value is **false**
      */
-    open var shouldFlipFrontCameraImage = false
+    @objc open var shouldFlipFrontCameraImage = false
 
     /**
      Property to determine if manager should keep view with the same bounds when the orientation changes.
      - note: Default value is **false**
      */
-    open var shouldKeepViewAtOrientationChanges = false
+    @objc open var shouldKeepViewAtOrientationChanges = false
 
     /**
      Property to determine if manager should enable tap to focus on camera preview.
